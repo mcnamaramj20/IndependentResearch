@@ -150,8 +150,8 @@ import javax.swing.JPanel;
 			        		int constvalue2 = constvalue*76;
 			        		int constvalue3 = 1790;
 			        		int constvalue4 = 3436;
-			        		double x =Math.abs(pair2.getP1()*constvalue);
-			        		double y = Math.abs(pair2.getP2()*constvalue);
+			        		double x =Math.abs(pair2.getP1()*constvalue);//normalize here
+			        		double y = Math.abs(pair2.getP2()*constvalue);//normalize here
 			    			if(x>0) {
 			    			 x-=constvalue1;
 			    			 x-=constvalue3;
@@ -183,8 +183,8 @@ import javax.swing.JPanel;
 			        		int constvalue2 = constvalue*76;
 			        		int constvalue3 = 1790;
 			        		int constvalue4 = 3436;
-			        		double x =Math.abs(pair.getP1()*constvalue);
-			        		double y = Math.abs(pair.getP2()*constvalue);
+			        		double x =Math.abs(pair.getP1()*constvalue);//normalize here
+			        		double y = Math.abs(pair.getP2()*constvalue);//normalize here
 			    			if(x>0) {
 			    			 x-=constvalue1;
 			    			 x-=constvalue3;
