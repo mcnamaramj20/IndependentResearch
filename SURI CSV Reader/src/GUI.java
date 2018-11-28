@@ -134,14 +134,25 @@ import javax.swing.JPanel;
 
 					    Graphics2D g2d = (Graphics2D) g;
 					    Graphics2D g3d = (Graphics2D) g;
+					    //Graphics2D g4d = (Graphics2D) g;
+
 					    g2d.setColor(Color.blue);
 					    g3d.setColor(Color.red);
+					  //  g4d.setColor(Color.green);
 					  // draw(g2d);
 					    
 					    Iterator<Pair> iterator = waypoint.wayPoints.iterator();
 					    Iterator<Pair> iterator2 = flightdata1.log.iterator();
-
-					    while (iterator2.hasNext()) {
+					    
+					    double waypointP1 = 0;
+					    double waypointP2 = 0;
+					    double flightdataP1 = 0;
+					    double flightdataP2 = 0;
+					    
+					    int counter =0;
+					    double point1 = 0;
+	        			double point2 = 0;
+					    while (iterator2.hasNext() && counter<100) {
 			        		
 			        		Pair pair2 = iterator2.next();
 			        		//System.out.println("test");
@@ -152,7 +163,15 @@ import javax.swing.JPanel;
 			        		int constvalue4 = 3436;
 			        		double x =Math.abs(pair2.getP1()*constvalue);//normalize here
 			        		double y = Math.abs(pair2.getP2()*constvalue);//normalize here
-			    			if(x>0) {
+			        		if(counter ==0) {
+			        			  point1 = pair2.getP1();
+			        			  point2 = pair2.getP2();
+			        		}
+			        		
+			        		double x1 = pair2.getP1()-point1;
+			        		double y2 = pair2.getP2()-point2;
+			        		
+			    		/*	if(x>0) {
 			    			 x-=constvalue1;
 			    			 x-=constvalue3;
 			    			 x*=120;
@@ -161,22 +180,25 @@ import javax.swing.JPanel;
 			    			y-=constvalue2;
 			    			y-=constvalue4;
 			    			y*=120;
-			    			}
-			    			System.out.println("x = "+ x);
-			    			System.out.println("y = "+ y);
+			    			}*/
+			    			//System.out.println("x = "+ x1);
+			    			//System.out.println("y = "+ y2);
 			    			g3d.drawOval((int)x, (int)y, 5, 5);
 			    			//pnlOne.revalidate();
 			    		   // pnlOne.repaint();
 			    		   // this.setVisible(true);
 
 			    			//.draw(new Line2D.Double( Math.abs(pair.getP1()), Math.abs(pair.getP2()),  Math.abs(pair.getP1()), Math.abs(pair.getP2())));
-			    			 //g2d.drawLine();
+			    			// g2d.drawLine();
+			        		
+			    			counter ++;
 			    			
 			    		}
 			 
 			        	while (iterator.hasNext()) {
 			        		
 			        		Pair pair = iterator.next();
+			        		//Pair pair2 = iterator2.next();
 			        		//System.out.println("test");
 			        		int constvalue = 1000;
 			        		int constvalue1 = constvalue*36;
@@ -185,6 +207,9 @@ import javax.swing.JPanel;
 			        		int constvalue4 = 3436;
 			        		double x =Math.abs(pair.getP1()*constvalue);//normalize here
 			        		double y = Math.abs(pair.getP2()*constvalue);//normalize here
+			        		
+			        		//double normalized = ((pair.getP1()+pair2.getP1())/(Math.sqrt(pair.getP2()+pair2.getP2())));
+			        		
 			    			if(x>0) {
 			    			 x-=constvalue1;
 			    			 x-=constvalue3;
@@ -195,11 +220,11 @@ import javax.swing.JPanel;
 			    			y-=constvalue4;
 			    			y*=120;
 			    			}
-			    			System.out.println(x);
-			    			System.out.println(y);
+			    			System.out.println(pair.getP1());
+			    			System.out.println(pair.getP2());
 			    			//draw(g2d);
 			    			 //g.fillRect(0,  0,  (int)Math.abs(pair.getP1()),  (int)Math.abs(pair.getP2()));
-			    			g2d.drawOval((int)x, (int)y, 5, 5);
+			    		g2d.drawOval((int)x, (int)y, 5, 5);
 			    			//pnlOne.revalidate();
 			    		   // pnlOne.repaint();
 			    		   // this.setVisible(true);
@@ -208,6 +233,19 @@ import javax.swing.JPanel;
 			    			 //g2d.drawLine();
 			    			
 			    		}
+			        	
+			        /*	while (iterator.hasNext()) {
+			        		
+			        		Pair pair = iterator.next();
+			        		Pair pair2 = iterator2.next();
+			        		
+			        		
+			        		double normalizedx = ((pair.getP1()+pair2.getP1())/(Math.sqrt(pair.getP2()+pair2.getP2())));//normalized x value
+			        		double normalizedy = ((pair.getP2()+pair2.getP2())/(Math.sqrt(pair.getP1()+pair2.getP1())));//
+			    		
+			    			g3d.drawOval((int)normalizedx, (int)normalizedy, 5, 5 );
+			    			
+			    		}*/
 			        	
 			        	
 		         }

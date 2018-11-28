@@ -24,7 +24,7 @@ public class Pair{
     }
 
     public void printString (){
-        System.out.println("point coord long: " + this.p1 + "and Lat: " + this.p2);
+        //System.out.println("point coord long: " + this.p1 + "and Lat: " + this.p2);
     }
 
 }

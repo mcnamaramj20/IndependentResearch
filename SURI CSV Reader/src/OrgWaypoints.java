@@ -145,15 +145,15 @@ public class OrgWaypoints extends JPanel implements ActionListener {
 	 	    String str11 = strb1.toString();
 	 	    String str21 = strb2.toString();
 	 	    
-	 	    str11 = str11.substring(0, 6);
-	 	    str21 = str21.substring(1, 6);
+	 	    str11 = str11.substring(0, str11.length());
+	 	    str21 = str21.substring(1, str21.length());
 	 	    	
 	 	    	
 	 	    int x22 = Integer.parseInt(str11);
 	 	    int y22 = Integer.parseInt(str21);
 	 	    
-	 	   System.out.println("x = "+ x22);
-		   System.out.println("y = "+ y22);
+	 	   System.out.println("this is it x = "+ x22);
+		   System.out.println("this is it y = "+ y22);
 		
 	 	    }
 	 	    
