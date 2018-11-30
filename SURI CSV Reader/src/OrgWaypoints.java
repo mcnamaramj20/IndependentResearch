@@ -96,16 +96,6 @@ public class OrgWaypoints extends JPanel implements ActionListener {
 	  	    }
 		
 		}
-	     
-	      
-	    public void drawWayPoints() {
-	    	
-	    	
-	    }
-	    
-	//    public double accuracy() {
-	    	
-	   // }
 	    
 		public  ArrayList<Pair> getWayPoints() {
 			

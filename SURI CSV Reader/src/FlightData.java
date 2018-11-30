@@ -128,8 +128,8 @@ public class FlightData extends JPanel implements ActionListener {
 	 	    int x22 = Integer.parseInt(str11);
 	 	    int y22 = Integer.parseInt(str21);
 	 	    
-	 	   //System.out.println("x = "+ x22);
-		   //System.out.println("y = "+ y22);
+	 	   System.out.println("x = "+ x22);
+		   System.out.println("y = "+ y22);
 		
 	 	    }
 	 	    
